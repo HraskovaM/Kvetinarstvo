@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: 60px 1fr 40px;
+  grid-template-areas:
+    "h h"
+    "n m"
+    "f f";
+}
+
+header {
+  grid-area: h;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(61, 10, 10);
+}
+
+header h1 {
+  color: white;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  grid-area: n;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  row-gap: 16px;
+}
+
+nav a {
+  border: 1px solid black;
+  color: black;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 6px 0;
+  border-radius: 6px;
+  transition: all 350ms;
+}
+
+nav a.active,
+nav a:hover {
+  background-color: black;
+  color: white;
+}
+
+main {
+  grid-area: m;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main.uvod {
+  position: relative;
+}
+
+main.uvod img {
+  position: absolute;
+  z-index: -1;
+  top: 16px;
+  left: 16px;
+  width: calc(100% - 32px);
+  height: calc(100% - 32px);
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0.3;
+}
+
+main h1 {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+footer {
+  grid-area: f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid black;
+}
+
+footer h1 {
+  margin: 0;
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main .uvod,
+main .kytice,
+main .kontakt {
+  grid-area: m;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .kytice h1 main .uvod h1 {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main.kytice table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 800px;
+}
+
+main.kytice table th,
+main.kytice table td {
+  border: 1px solid black;
+  padding: 16px 12px;
+}
+
+main.kytice table tfoot tr:last-child,
+main.kytice table tfoot tr:last-child {
+  text-align: center;
+}
+
+main.galeria {
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+main.galeria img {
+  max-width: 360px;
+}
